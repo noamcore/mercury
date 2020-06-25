@@ -1,0 +1,61 @@
+{
+  "name": "mercury",
+  "version": "3.0.0",
+  "description": "Messaging helper for event driven systems",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register --project tsconfig.spec.json tests/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monsterholic/mercury.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "messaging",
+    "bus",
+    "event",
+    "driven",
+    "architecture",
+    "microservices",
+    "communication"
+  ],
+  "author": {
+    "name": "Cledson",
+    "email": "f.cl3dson@gmail.com",
+    "url": "https://github.com/cl3dson"
+  },
+  "contributors": [
+    {
+      "name": "Darlinson Alves",
+      "email": "darlinsonalves@gmail.com",
+      "url": "https://github.com/darlinson-alves"
+    },
+    {
+      "name": "Romulo Queiroz",
+      "email": "romuloqueiroz100@gmail.com",
+      "url": "https://github.com/RomuloQ"
+    },
+    {
+      "name": "Iago Sousa",
+      "email": "noamcore@pm.me",
+      "url": "https://github.com/noamcore"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monsterholic/mercury/issues"
+  },
+  "homepage": "https://github.com/Monsterholic/mercury#readme",
+  "dependencies": {
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "husky": "^4.2.5",
+    "mocha": "^8.0.1",
+    "ts-node": "^8.10.2"
+  }
+}

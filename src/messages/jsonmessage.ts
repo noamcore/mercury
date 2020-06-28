@@ -1,15 +1,15 @@
 import { Message } from "./message";
 
-export class JsonMessage extends Message<object> {
-  get content(): object {
-    if (this.options?.content instanceof Buffer) {
-      return JSON.parse(this.options?.content.toString());
+export class JsonMessage<T> extends Message<T> {
+  getContent(): T {
+    if (this.content instanceof Buffer) {
+      return JSON.parse(this.content.toString());
     }
 
-    return this.options?.content;
+    return this.content;
   }
 
-  get serializedContent(): string {
+  getSerializedContent(): string {
     return JSON.stringify(this.content);
   }
 }

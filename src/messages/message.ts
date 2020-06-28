@@ -1,15 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 
-interface MessageDescription<ContentType> {
-  uuid: string;
-  descriptor: string;
-  parentMessage: string;
-  content: ContentType;
-  creationDate: Date;
-}
-
-export abstract class Message<ContentType> {
-  protected readonly options: MessageDescription<ContentType>;
+export abstract class Message<ContentType = any> {
+  private uuid: string;
+  private descriptor: string;
+  private parentMessage: string;
+  protected content: ContentType;
+  private creationDate: Date;
 
   constructor(
     descriptor: string,
@@ -18,35 +14,37 @@ export abstract class Message<ContentType> {
     timestamp?: number,
     parentMessage?: string
   ) {
-    this.options = {
-      content,
-      creationDate: new Date(timestamp || ""),
-      descriptor,
-      parentMessage,
-      uuid: id || uuidv4(),
-    };
+    this.content = content;
+    this.descriptor = descriptor;
+    this.creationDate = new Date(timestamp || null);
+    this.parentMessage = parentMessage;
+    this.uuid = id || uuidv4();
   }
 
-  public abstract get content(): ContentType;
-  public abstract get serializedContent(): string;
+  public abstract getContent(): ContentType;
+  public abstract getSerializedContent(): string;
 
-  public get uuid(): string {
-    return this.options?.uuid;
+  public getUUID(): string {
+    return this.uuid;
   }
 
-  public get descriptor(): string {
-    return this.options?.descriptor;
+  public getDescriptor(): string {
+    return this.descriptor;
   }
 
-  public get parentMessage(): string {
-    return this.options?.parentMessage;
+  public getParentMessage(): string {
+    return this.parentMessage;
   }
 
-  public get creationDate(): Date {
-    return this.options?.creationDate;
+  public getCreationDate(): Date {
+    return this.creationDate;
   }
 
   public setParentMessage(parentMessage: string): void {
-    this.options.parentMessage = parentMessage;
+    this.parentMessage = parentMessage;
+  }
+
+  public toString(): string {
+    return JSON.stringify(this);
   }
 }

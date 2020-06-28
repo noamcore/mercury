@@ -4,7 +4,7 @@
   "description": "Messaging helper for event driven systems",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register --project tsconfig.spec.json tests/**/*.test.ts"
+    "test": "mocha -r ts-node/register --project tsconfig.spec.json"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,8 @@
   },
   "homepage": "https://github.com/Monsterholic/mercury#readme",
   "dependencies": {
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",

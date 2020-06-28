@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "classic",
+    "moduleResolution": "node",
     "allowJs": false,
     "target": "ESNext",
     "baseUrl": "./src",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "declaration": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "tests"]
+  "include": ["src/**/*.ts"]
 }
